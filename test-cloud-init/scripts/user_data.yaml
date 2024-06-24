@@ -1,0 +1,18 @@
+#cloud-config
+timezone: Asia/Tokyo
+locale: C.UTF-8
+
+repo_update: false
+repo_upgrade: false
+#repo_update: true
+#repo_upgrade: all
+#
+#packages:
+#  - docker
+
+write_files:
+  - path: /var/lib/cloud/scripts/run-script.sh
+    permissions: "0700"
+    owner: "root:root"
+    content: |
+      ${run-script}
